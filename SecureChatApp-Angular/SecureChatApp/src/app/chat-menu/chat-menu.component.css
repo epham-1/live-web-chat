@@ -1,0 +1,52 @@
+.chat-menu{
+  border: 1.5px blue solid;
+  float:left;
+  width: 15%;
+  height:100%;
+  text-align: center;
+  overflow-y:auto;
+}
+
+.roomButton{
+  width: 95%;
+  height: 7%;
+  background-color: skyblue;
+  transition-duration: 0.3s;
+  border-radius: 25px;
+  margin-top: 3%;
+}
+
+.roomButton:hover{
+  background-color: aqua;
+}
+
+.roomButton.selected{
+  background-color: red;
+}
+
+.roomButton.notification{
+  background-color: yellowgreen;
+}
+
+.roomButton.notification:hover{
+  background-color: yellow;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.popup{
+
+}

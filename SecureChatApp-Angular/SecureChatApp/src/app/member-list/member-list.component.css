@@ -1,0 +1,7 @@
+.member-list{
+  border: 1.5px red solid;
+  float:left;
+  width: 15%;
+  height: 100%;
+  text-align: center;
+}

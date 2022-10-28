@@ -1,0 +1,19 @@
+<div class="chat-menu">
+  <h2>Chat Room List</h2>
+    <span *ngFor="let room of chatRooms">
+      <button [class.selected]="room==currentRoom" class="roomButton"(click)="updateRoom(room)">
+        {{room}}
+      </button>
+    </span>
+    <label for="newRoom">Create Room:</label>
+    <input #room id="newRoom">
+    <button (click)="createRoom(room.value); room.value=''">New Room</button>
+    <label for="joinRoom">Join Room:</label>
+    <input #joinroom id="joinRoom">
+    <button (click)="getRoom(joinroom.value); joinroom.value=''">Join Room</button>
+    <button>Popup</button>
+</div>
+
+<div class="popup" >
+
+</div>

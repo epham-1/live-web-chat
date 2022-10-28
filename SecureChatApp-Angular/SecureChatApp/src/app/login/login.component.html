@@ -1,0 +1,49 @@
+<div class="login">
+  <h2>LOGIN</h2>
+
+  <form
+    name="form"
+    #f="ngForm"
+    (ngSubmit)="f.form.valid && login()"
+    novalidate
+  >
+    <label for="username">Username:</label>
+    <input
+      class="username"
+      [(ngModel)]="loginForm.username"
+      type="text"
+      name="username"
+      required
+      #username="ngModel"
+      [ngClass]="{ 'is-invalid': f.submitted && username.errors }"
+  />
+    <div *ngIf="username.errors && f.submitted" class="invalid-feedback">
+      Username is required!
+    </div>
+
+    <label for="password">Password:</label>
+    <input
+      type="password"
+      class="password"
+      name="password"
+      #password="ngModel"
+      required
+      [(ngModel)]="loginForm.password"
+      minlength="6"
+      [ngClass]="{ 'is-invalid': f.submitted && password.errors }"
+    >
+    <div *ngIf="password.errors && f.submitted" class="invalid-feedback">
+      <div *ngIf="password.errors['required']">Password is required</div>
+      <div *ngIf="password.errors['minlength']">
+        Password must be at least 6 characters
+      </div>
+    </div>
+
+    <button class="button" type="submit">Login</button>
+    <div *ngIf="f.submitted && isLoginFailed" class="alert alert-danger" role="alert">
+      Login failed: {{ loginErrorMessage }}
+    </div>
+  </form>
+
+
+</div>

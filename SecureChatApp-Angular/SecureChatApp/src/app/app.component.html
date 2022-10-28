@@ -1,0 +1,7 @@
+<div class="NavBar">
+  <h1 class="username">{{username}}</h1>
+  <button *ngIf="isLoggedIn" class="button">LOGOUT</button>
+  <button *ngIf="!isLoggedIn" class="button">LOGIN</button>
+</div>
+<app-chat *ngIf="isLoggedIn"></app-chat>
+<app-login *ngIf="!isLoggedIn"></app-login>

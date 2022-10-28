@@ -1,0 +1,38 @@
+<app-chat-menu #chatMenu
+  (updateRoomEmitter)="updateRoom($event)"
+  (newRoomEmitter)="newRoom($event)">
+</app-chat-menu>
+
+<div class="chat-page">
+  <div class="chatHeader">
+    <h2 class="chatName">{{currentRoomName}}</h2>
+    <button
+      *ngIf="currentRoomName != 'Global'"
+      (click)="leaveRoom(currentRoomName);
+      chatMenu.leaveRoom(currentRoomName)"
+    class="leaveRoom">Leave Room</button>
+  </div>
+
+
+  <div class="messageBox">
+    <mat-card class="message" *ngFor="let message of currentChat">
+      <mat-card-subtitle>{{message.username}}</mat-card-subtitle>
+      {{message.content}}
+    </mat-card>
+  </div>
+
+
+  <div class="chatBox">
+    <input  (keydown.enter)="sendMessage()"
+            placeholder="Chat Here"
+            id="chatMessage"
+            style='font-size: 20px; color: white;'
+            [(ngModel)]="form.content"/>
+    <mat-icon (click)="sendMessage()" class="submitChat" fontIcon="arrow_right_alt"></mat-icon>
+  </div>
+
+</div>
+
+<app-member-list>
+</app-member-list>
+

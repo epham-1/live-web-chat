@@ -1,0 +1,22 @@
+.NavBar{
+  background-color: blue;
+  height:10%;
+  vertical-align:top;
+  width:99.2%;
+  display:flex;
+}
+
+.NavBar * {
+  margin-top: 0;
+  height:100%;
+  margin-bottom: 0;
+  display:inline-block;
+}
+.username {
+  color: white;
+  vertical-align: middle;
+}
+.button {
+  margin-left: auto;
+  width:5%
+}
